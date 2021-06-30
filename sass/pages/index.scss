@@ -6,10 +6,38 @@
 
 .restaurants {
     background-color: #F6F6F6;
-    .restaurants__list {
+    & h2 {
+        padding: 2.3rem 3rem 0;
+    }
+    &__list {
         box-sizing: border-box;
+        & figure {
+            background-color: white;
+            border-radius: 1.2rem;
+        }
+        & figcaption {
+            display: flex;
+            justify-content: space-between;
+        }
+        & h3 {
+            margin: 0;
+            padding: 0.5rem 0.5rem 0;
+        }
+        & p {
+            margin: 0.2rem 0 0;
+            padding: 0 0.5rem;
+        }
         & img {
             width: 100%;
+            height: 100%;
+            max-height: 12rem;
+            object-fit: cover;
+            border-top-left-radius: 1.2rem;
+            border-top-right-radius: 1.2rem;
         }
+    }
+    &__list-heartfav {
+        margin: 1.5rem;
+        font-size: 1.5rem;
     }
 }
