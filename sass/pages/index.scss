@@ -4,6 +4,12 @@
     align-items: center;
 }
 
-input {
-    border: none;
+.restaurants {
+    background-color: #F6F6F6;
+    .restaurants__list {
+        box-sizing: border-box;
+        & img {
+            width: 100%;
+        }
+    }
 }
