@@ -6,18 +6,21 @@
 
 .restaurants {
     background-color: #F6F6F6;
+    padding-bottom: 3rem;
     & h2 {
-        padding: 2.3rem 3rem 0;
+        padding: 2.3rem 1.3rem 0;
     }
     &__list {
         box-sizing: border-box;
         & figure {
-            background-color: white;
+            background-color: $color-background;
             border-radius: 1.2rem;
+            margin: 0 1.3rem 1.3rem;
         }
         & figcaption {
             display: flex;
             justify-content: space-between;
+            padding: 0rem 0.2rem 1rem;
         }
         & h3 {
             margin: 0;
@@ -39,5 +42,9 @@
     &__list-heartfav {
         margin: 1.5rem;
         font-size: 1.5rem;
+        .fa-heart {
+            position: absolute;
+            left: 19.2rem;
+        }
     }
 }

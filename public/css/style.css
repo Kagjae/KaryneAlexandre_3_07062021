@@ -1,88 +1,18 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 16 |             background-color: $color-background;
+ *    |                               ^^^^^^^^^^^^^^^^^
+ *    '
+ *   sass\pages\index.scss 16:31  @import
+ *   sass\main.scss 4:9           root stylesheet */
 
-a {
-  text-decoration: none;
-  color: white;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 16 \2502              background-color: $color-background;\d\a    \2502                                ^^^^^^^^^^^^^^^^^\a    \2575 \a   sass\\pages\\index.scss 16:31  @import\a   sass\\main.scss 4:9           root stylesheet";
 }
-
-h2,
-h3 {
-  font-weight: 700;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.logo img {
-  height: 2rem;
-  padding: 0.3rem 0;
-}
-
-footer {
-  background-color: #353535;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 0 1.5rem 2.5rem;
-}
-footer h3 {
-  font-family: "Shrikhand", cursive;
-}
-
-.search-city {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.restaurants {
-  background-color: #F6F6F6;
-}
-.restaurants h2 {
-  padding: 2.3rem 3rem 0;
-}
-.restaurants__list {
-  box-sizing: border-box;
-}
-.restaurants__list figure {
-  background-color: white;
-  border-radius: 1.2rem;
-}
-.restaurants__list figcaption {
-  display: flex;
-  justify-content: space-between;
-}
-.restaurants__list h3 {
-  margin: 0;
-  padding: 0.5rem 0.5rem 0;
-}
-.restaurants__list p {
-  margin: 0.2rem 0 0;
-  padding: 0 0.5rem;
-}
-.restaurants__list img {
-  width: 100%;
-  height: 100%;
-  max-height: 12rem;
-  object-fit: cover;
-  border-top-left-radius: 1.2rem;
-  border-top-right-radius: 1.2rem;
-}
-.restaurants__list-heartfav {
-  margin: 1.5rem;
-  font-size: 1.5rem;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/*# sourceMappingURL=style.css.map */
