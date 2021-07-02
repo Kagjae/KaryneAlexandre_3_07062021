@@ -76,6 +76,9 @@ footer a {
   border: none;
 }
 
+.order {
+  margin-bottom: 3rem;
+}
 .order h2 {
   margin: 0;
   padding: 2.2rem 1.3rem 0.5rem;
