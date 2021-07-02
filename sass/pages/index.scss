@@ -5,6 +5,23 @@
     background-color: #EAEAEA;
 }
 
+.search-restaurant {
+    background-color: #F6F6F6;
+    text-align: center;
+    & h2 {
+        margin: 0;
+        padding: 2.5rem 3rem 0;
+    }
+    &__button {
+        cursor: pointer;
+        height: 3rem;
+        width: 15rem;
+        border-radius: 3rem;
+        margin: 1rem 0 3.5rem;
+        border: none;
+    }
+}
+
 .restaurants {
     background-color: #F6F6F6;
     padding-bottom: 3rem;

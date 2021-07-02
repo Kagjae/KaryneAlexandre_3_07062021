@@ -27,10 +27,12 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0.5rem;
 }
 .logo img {
   height: 2rem;
-  padding: 0.3rem 0;
+  width: 10rem;
+  padding: 1rem 0 0.5rem;
 }
 
 footer {
@@ -53,6 +55,24 @@ footer a {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #EAEAEA;
+}
+
+.search-restaurant {
+  background-color: #F6F6F6;
+  text-align: center;
+}
+.search-restaurant h2 {
+  margin: 0;
+  padding: 2.5rem 3rem 0;
+}
+.search-restaurant__button {
+  cursor: pointer;
+  height: 3rem;
+  width: 15rem;
+  border-radius: 3rem;
+  margin: 1rem 0 3.5rem;
+  border: none;
 }
 
 .restaurants {
@@ -95,9 +115,13 @@ footer a {
   margin: 1.5rem;
   font-size: 1.5rem;
 }
-.restaurants__list-heartfav .fa-heart {
+.restaurants__list-heartfav .heart-empty,
+.restaurants__list-heartfav .heart-full {
   position: absolute;
   left: 19.2rem;
+}
+.restaurants__list-heartfav .heart-full {
+  color: transparent;
 }
 
 .logo {
