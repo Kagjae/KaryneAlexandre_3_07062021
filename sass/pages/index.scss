@@ -60,12 +60,22 @@
     &__list-heartfav {
         margin: 1.5rem;
         font-size: 1.5rem;
+        cursor: pointer;
         .fa-heart {
             position: absolute;
             left: 19.2rem;
         }
         .heart-full {
             color: transparent;
+            &:hover {
+                background: linear-gradient(#ff79da 0%, #9356dc 100%);
+                transition: color 0.9s;
+                background-clip: inherit;
+            }
+        }
+        .heart-empty:hover {
+            opacity: 0;
+            transition-duration: 0.5s;
         }
     }
 }
