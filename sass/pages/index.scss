@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     background-color: #EAEAEA;
+    border-top: inset;
 }
 
 .search-restaurant {
@@ -17,8 +18,45 @@
         height: 3rem;
         width: 15rem;
         border-radius: 3rem;
-        margin: 1rem 0 3.5rem;
+        margin: 1rem 0 2.5rem;
         border: none;
+    }
+}
+
+.order {
+    & h2 {
+        margin: 0;
+        padding: 2.2rem 1.3rem 0.5rem;
+    }
+    &__steps {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+        &--order {
+            width: 15rem;
+            height: 3rem;
+            border-radius: 0.8rem;
+            border: none;
+            box-shadow: grey 0px 5px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: 1rem;
+            padding-left: 1rem;
+        }
+    }
+    &__count {
+        background-color: #9356DC;
+        position: relative;
+        right: 13.2rem;
+        color: white;
+        height: 1.5rem;
+        width: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
     }
 }
 
@@ -68,14 +106,13 @@
         .heart-full {
             color: transparent;
             &:hover {
-                background: linear-gradient(#ff79da 0%, #9356dc 100%);
-                transition: color 0.9s;
-                background-clip: inherit;
+                color: black;
+                transition-duration: 1s;
             }
         }
         .heart-empty:hover {
             opacity: 0;
-            transition-duration: 0.5s;
+            transition-duration: 1s;
         }
     }
 }
