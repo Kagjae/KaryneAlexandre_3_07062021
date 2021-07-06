@@ -1,3 +1,5 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
 .search-city {
     display: flex;
     justify-content: center;
@@ -12,14 +14,6 @@
     & h2 {
         margin: 0;
         padding: 2.5rem 3rem 0;
-    }
-    &__button {
-        cursor: pointer;
-        height: 3rem;
-        width: 15rem;
-        border-radius: 3rem;
-        margin: 1rem 0 2.5rem;
-        border: none;
     }
 }
 
@@ -39,16 +33,23 @@
             height: 3rem;
             border-radius: 0.8rem;
             border: none;
-            box-shadow: grey 0px 5px 15px;
             display: flex;
             align-items: center;
             justify-content: space-evenly;
             margin-top: 1rem;
             padding-left: 1rem;
+            cursor: pointer;
+            @include button-shadow;
+            &:hover {
+                background-color: #F5EDFF;
+                .fas {
+                    color: $color-primary;
+                }
+            }
         }
     }
     &__count {
-        background-color: #9356DC;
+        background-color: $color-primary;
         position: relative;
         right: 13.2rem;
         color: white;
@@ -70,7 +71,7 @@
     &__list {
         box-sizing: border-box;
         & figure {
-            background-color: white;
+            background-color: $color-light;
             border-radius: 1.2rem;
             margin: 0 1.3rem 1.3rem;
             @media screen and (min-width: 768px) {
@@ -113,7 +114,9 @@
         .heart-full {
             color: transparent;
             &:hover {
-                color: black;
+                background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
                 transition-duration: 1s;
             }
         }
