@@ -205,10 +205,20 @@ footer a {
   transition-duration: 1s;
 }
 
-.logo {
+.menu-header {
+  padding: 1.5rem 0 0.5rem;
   display: flex;
-  justify-content: center;
+  align-content: center;
+  justify-content: space-evenly;
   align-items: center;
+}
+.menu-header__logo {
+  padding: 0 4rem 0 3em;
+  margin: 0;
+}
+
+.main-menu img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

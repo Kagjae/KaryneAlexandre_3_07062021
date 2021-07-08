@@ -1,0 +1,16 @@
+@import "../utils/variables.scss";
+.menu-header {
+    padding: 1.5rem 0 0.5rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    &__logo {
+        padding: 0 4rem 0 3em;
+        margin: 0;
+    }
+}
+
+.main-menu img {
+    width: 100%;
+}
