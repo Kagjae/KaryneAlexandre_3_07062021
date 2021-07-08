@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="../public/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -13,22 +13,24 @@
 </head>
 
 <body>
-    <header class="menu-header">
-        <div class="menu-header__arrow">
-            <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
-        </div>
-        <div class="menu-header__logo">
-            <img src="../public/images/logo/ohmyfood@2x.svg" alt="logo du site Oh My Food" />
-        </div>
-    </header>
+    <a href="../index.html">
+        <header class="menu-header">
+            <div class="menu-header__arrow">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="menu-header__logo">
+                <img src="../public/images/logo/ohmyfood@2x.svg" alt="logo du site Oh My Food" />
+            </div>
+        </header>
+    </a>
     <main class="main-menu">
         <img src="../public/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="photo d'une assiette présentant un exemple de cuisine gastronomique française" />
         <article class="menu">
             <div class="menu__header">
                 <h2>La note enchantée</h2>
                 <div class="menu__header--heartfav">
-                    <i class="far fa-heart"></i>
-                    <i class="fas fa-heart"></i>
+                    <span><i class="far fa-heart heart-empty"></i></span>
+                    <span><i class="fas fa-heart heart-full"></i></span>
                 </div>
             </div>
             <div class="menu__appetizer">
