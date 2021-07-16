@@ -26,6 +26,22 @@
     object-fit: cover;
 }
 
+.menu__appetizer,
+.menu__main-course,
+.menu__dessert {
+    animation: fade-in 5s forwards;
+    display: block;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .menu {
     padding: 1.5rem;
     position: relative;
@@ -45,6 +61,9 @@
     &__header {
         display: flex;
         align-items: center;
+        @media screen and (min-width: 768px) {
+            justify-content: center;
+        }
         & h2 {
             font-family: 'Shrikhand', cursive;
         }
@@ -82,29 +101,16 @@
         white-space: nowrap;
         cursor: pointer;
         @include button-shadow;
+        &:hover>&--check {
+            animation: app 1s forwards;
+        }
         &:hover {
             .fa-check-circle {
                 transform: scale(1);
                 transform: rotate( 360deg);
                 transition: all 1s;
+                color: white;
             }
-        }
-        & h4,
-        p {
-            margin: 0;
-        }
-        &--detail {
-            display: flex;
-            flex-direction: column;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        &--price {
-            display: flex;
-            align-items: flex-end;
-            position: relative;
-            top: -2rem;
         }
         &--check {
             display: flex;
@@ -116,8 +122,31 @@
             position: relative;
             top: -1rem;
             right: -1rem;
-            transform: scale(0);
+            transform: scaleX(0);
+            transform-origin: 100% 50%
         }
+        @keyframes app {
+            100% {
+                transform: scaleX(1);
+            }
+        }
+    }
+    & h4,
+    p {
+        margin: 0;
+    }
+    &--detail {
+        display: flex;
+        flex-direction: column;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    &--price {
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        top: -2rem;
     }
 }
 

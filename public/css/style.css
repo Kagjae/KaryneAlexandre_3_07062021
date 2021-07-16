@@ -66,17 +66,27 @@ footer a {
 }
 
 .animation {
-  width: 3rem;
-  height: 3rem;
-  background-color: #99E2D0;
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: scale(0);
-  /*transform: scale(1) rotate(-90deg);
-      transition: transform 330ms ease-in-out;*/
+  background: #99E2D0;
+  width: 3rem;
+  height: 3rem;
+  animation: spin 3s linear forwards;
+  transform: rotate(0deg);
 }
 
+@keyframes spin {
+  99% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .search-city {
   display: flex;
   justify-content: center;
@@ -100,6 +110,13 @@ footer a {
 .order h2 {
   margin: 0;
   padding: 2.2rem 1.3rem 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .order h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .order__steps {
   display: flex;
@@ -146,6 +163,13 @@ footer a {
 .restaurants h2 {
   padding: 2.3rem 1.3rem 0;
 }
+@media screen and (min-width: 768px) {
+  .restaurants h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .restaurants__new span {
   color: #008766;
   font-weight: 500;
@@ -163,9 +187,8 @@ footer a {
 @media screen and (min-width: 768px) {
   .restaurants__list {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
   }
 }
 .restaurants__list figure {
@@ -200,6 +223,17 @@ footer a {
   border-top-left-radius: 1.2rem;
   border-top-right-radius: 1.2rem;
 }
+.restaurants__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+.restaurants__card a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .restaurants__list-heartfav {
   margin: 1.5rem;
   font-size: 1.5rem;
@@ -207,7 +241,6 @@ footer a {
 }
 .restaurants__list-heartfav .fa-heart {
   position: absolute;
-  left: 19.2rem;
 }
 .restaurants__list-heartfav .heart-full {
   color: transparent;
@@ -249,6 +282,21 @@ footer a {
   object-fit: cover;
 }
 
+.menu__appetizer,
+.menu__main-course,
+.menu__dessert {
+  animation: fade-in 5s forwards;
+  display: block;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .menu {
   padding: 1.5rem;
   position: relative;
@@ -269,6 +317,11 @@ footer a {
 .menu__header {
   display: flex;
   align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .menu__header {
+    justify-content: center;
+  }
 }
 .menu__header h2 {
   font-family: "Shrikhand", cursive;
@@ -307,27 +360,14 @@ footer a {
   cursor: pointer;
   box-shadow: grey 0px 5px 15px;
 }
+.menu__meal:hover > .menu__meal--check {
+  animation: app 1s forwards;
+}
 .menu__meal:hover .fa-check-circle {
   transform: scale(1);
   transform: rotate(360deg);
   transition: all 1s;
-}
-.menu__meal h4,
-.menu__meal p {
-  margin: 0;
-}
-.menu__meal--detail {
-  display: flex;
-  flex-direction: column;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.menu__meal--price {
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  top: -2rem;
+  color: white;
 }
 .menu__meal--check {
   display: flex;
@@ -339,7 +379,30 @@ footer a {
   position: relative;
   top: -1rem;
   right: -1rem;
-  transform: scale(0);
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+}
+@keyframes app {
+  100% {
+    transform: scaleX(1);
+  }
+}
+.menu h4,
+.menu p {
+  margin: 0;
+}
+.menu--detail {
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.menu--price {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  top: -2rem;
 }
 
 @media screen and (min-width: 768px) {

@@ -1,155 +1,185 @@
-@import "../utils/variables.scss";
-@import "../utils/mixins.scss";
-.animation {
-    width: 3rem;
-    height: 3rem;
-    background-color: $color-tertiary;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: scale(0);
-    /*transform: scale(1) rotate(-90deg);
-        transition: transform 330ms ease-in-out;*/
-}
-
-.search-city {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #EAEAEA;
-    border-top: inset;
-}
-
-.search-restaurant {
-    background-color: #F6F6F6;
-    text-align: center;
-    & h2 {
-        margin: 0;
-        padding: 2.5rem 3rem 0;
+    @import "../utils/variables.scss";
+    @import "../utils/mixins.scss";
+    .animation {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: $color-tertiary;
+        width: 3rem;
+        height: 3rem;
+        animation: spin 3s linear forwards;
+        transform: rotate(0deg);
     }
-}
-
-.order {
-    margin-bottom: 3rem;
-    & h2 {
-        margin: 0;
-        padding: 2.2rem 1.3rem 0.5rem;
+    
+    @keyframes spin {
+        99% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
     }
-    &__steps {
+    
+    .search-city {
         display: flex;
-        align-content: center;
+        justify-content: center;
         align-items: center;
-        flex-direction: column;
-        &--order {
-            width: 15rem;
-            height: 3rem;
-            border-radius: 0.8rem;
-            border: none;
+        background-color: #EAEAEA;
+        border-top: inset;
+    }
+    
+    .search-restaurant {
+        background-color: #F6F6F6;
+        text-align: center;
+        & h2 {
+            margin: 0;
+            padding: 2.5rem 3rem 0;
+        }
+    }
+    
+    .order {
+        margin-bottom: 3rem;
+        & h2 {
+            margin: 0;
+            padding: 2.2rem 1.3rem 0.5rem;
+            @media screen and (min-width: 768px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        &__steps {
             display: flex;
+            align-content: center;
             align-items: center;
-            justify-content: space-evenly;
-            margin-top: 1rem;
-            padding-left: 1rem;
-            cursor: pointer;
-            @include button-shadow;
-            &:hover {
-                background-color: #F5EDFF;
-                .fas {
-                    color: $color-primary;
+            flex-direction: column;
+            &--order {
+                width: 15rem;
+                height: 3rem;
+                border-radius: 0.8rem;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                margin-top: 1rem;
+                padding-left: 1rem;
+                cursor: pointer;
+                @include button-shadow;
+                &:hover {
+                    background-color: #F5EDFF;
+                    .fas {
+                        color: $color-primary;
+                    }
                 }
             }
         }
-    }
-    &__count {
-        background-color: $color-primary;
-        position: relative;
-        right: 13.2rem;
-        color: white;
-        height: 1.5rem;
-        width: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-    }
-}
-
-.restaurants {
-    background-color: #F6F6F6;
-    padding-bottom: 3rem;
-    & h2 {
-        padding: 2.3rem 1.3rem 0;
-    }
-    &__new span {
-        color: #008766;
-        font-weight: 500;
-        background: $color-tertiary;
-        border: 5px solid #99E2D0;
-        border-radius: 0.2rem;
-        position: relative;
-        left: 3rem;
-        bottom: 11rem;
-        padding: 0 0.5rem;
-    }
-    &__list {
-        box-sizing: border-box;
-        @media screen and (min-width: 768px) {
+        &__count {
+            background-color: $color-primary;
+            position: relative;
+            right: 13.2rem;
+            color: white;
+            height: 1.5rem;
+            width: 1.5rem;
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
         }
-        & figure {
-            background-color: $color-light;
-            border-radius: 1.2rem;
-            margin: 0 1.3rem 1.3rem;
+    }
+    
+    .restaurants {
+        background-color: #F6F6F6;
+        padding-bottom: 3rem;
+        & h2 {
+            padding: 2.3rem 1.3rem 0;
             @media screen and (min-width: 768px) {
-                max-width: 40%;
-                margin: 0 0 1.3rem 1.3rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
         }
-        & figcaption {
-            display: flex;
-            justify-content: space-between;
-            padding: 0rem 0.2rem 1rem;
-        }
-        & h3 {
-            margin: 0;
-            padding: 0.5rem 0.5rem 0;
-        }
-        & p {
-            margin: 0.2rem 0 0;
+        &__new span {
+            color: #008766;
+            font-weight: 500;
+            background: $color-tertiary;
+            border: 5px solid #99E2D0;
+            border-radius: 0.2rem;
+            position: relative;
+            left: 3rem;
+            bottom: 11rem;
             padding: 0 0.5rem;
         }
-        & img {
-            width: 100%;
-            height: 100%;
-            max-height: 12rem;
-            object-fit: cover;
-            border-top-left-radius: 1.2rem;
-            border-top-right-radius: 1.2rem;
+        &__list {
+            box-sizing: border-box;
+            @media screen and (min-width: 768px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            & figure {
+                background-color: $color-light;
+                border-radius: 1.2rem;
+                margin: 0 1.3rem 1.3rem;
+                @media screen and (min-width: 768px) {
+                    max-width: 40%;
+                    margin: 0 0 1.3rem 1.3rem;
+                }
+            }
+            & figcaption {
+                display: flex;
+                justify-content: space-between;
+                padding: 0rem 0.2rem 1rem;
+            }
+            & h3 {
+                margin: 0;
+                padding: 0.5rem 0.5rem 0;
+            }
+            & p {
+                margin: 0.2rem 0 0;
+                padding: 0 0.5rem;
+            }
+            & img {
+                width: 100%;
+                height: 100%;
+                max-height: 12rem;
+                object-fit: cover;
+                border-top-left-radius: 1.2rem;
+                border-top-right-radius: 1.2rem;
+            }
         }
-    }
-    &__list-heartfav {
-        margin: 1.5rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-        .fa-heart {
-            position: absolute;
-            left: 19.2rem;
+        &__card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            & a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
-        .heart-full {
-            color: transparent;
-            &:hover {
-                background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+        &__list-heartfav {
+            margin: 1.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            .fa-heart {
+                position: absolute;
+            }
+            .heart-full {
+                color: transparent;
+                &:hover {
+                    background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transition-duration: 1s;
+                }
+            }
+            .heart-empty:hover {
+                color: transparent;
                 transition-duration: 1s;
             }
         }
-        .heart-empty:hover {
-            color: transparent;
-            transition-duration: 1s;
-        }
     }
-}
