@@ -90,7 +90,6 @@
         cursor: pointer;
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
         height: 3rem;
         width: 95%;
         background-color: white;
@@ -100,6 +99,8 @@
         overflow: hidden;
         white-space: nowrap;
         cursor: pointer;
+        animation: slidein 2s forwards;
+        opacity: 0;
         @include button-shadow;
         &:hover>&--check {
             animation: app 1s forwards;
@@ -118,6 +119,7 @@
             color: white;
             background-color: $color-tertiary;
             overflow: hidden;
+            margin-top: 0.5rem;
             padding: 2rem;
             position: relative;
             top: -1rem;
@@ -147,6 +149,33 @@
         align-items: flex-end;
         position: relative;
         top: -2rem;
+    }
+}
+
+.meal1 {
+    animation-delay: 1s;
+}
+
+.meal2 {
+    animation-delay: 1.1s;
+}
+
+.meal3 {
+    animation-delay: 1.2s;
+}
+
+.meal4 {
+    animation-delay: 1.3s;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
     }
 }
 

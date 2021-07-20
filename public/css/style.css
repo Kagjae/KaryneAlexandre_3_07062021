@@ -348,7 +348,6 @@ footer a {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   height: 3rem;
   width: 95%;
   background-color: white;
@@ -358,6 +357,8 @@ footer a {
   overflow: hidden;
   white-space: nowrap;
   cursor: pointer;
+  animation: slidein 2s forwards;
+  opacity: 0;
   box-shadow: grey 0px 5px 15px;
 }
 .menu__meal:hover > .menu__meal--check {
@@ -375,6 +376,7 @@ footer a {
   color: white;
   background-color: #99E2D0;
   overflow: hidden;
+  margin-top: 0.5rem;
   padding: 2rem;
   position: relative;
   top: -1rem;
@@ -405,6 +407,32 @@ footer a {
   top: -2rem;
 }
 
+.meal1 {
+  animation-delay: 1s;
+}
+
+.meal2 {
+  animation-delay: 1.1s;
+}
+
+.meal3 {
+  animation-delay: 1.2s;
+}
+
+.meal4 {
+  animation-delay: 1.3s;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 768px) {
   .menu__appetizer, .menu__main-course, .menu__dessert {
     display: flex;
