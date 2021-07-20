@@ -120,8 +120,8 @@
             background-color: $color-tertiary;
             overflow: hidden;
             margin-top: 0.5rem;
-            padding: 2rem;
-            position: relative;
+            padding: 2rem 2rem 2rem 1.5rem;
+            position: absolute;
             top: -1rem;
             right: -1rem;
             transform: scaleX(0);
@@ -131,6 +131,10 @@
             100% {
                 transform: scaleX(1);
             }
+        }
+        &--price {
+            display: flex;
+            align-items: center;
         }
     }
     & h4,
@@ -144,12 +148,10 @@
         white-space: nowrap;
         overflow: hidden;
     }
-    &--price {
-        display: flex;
-        align-items: flex-end;
-        position: relative;
-        top: -2rem;
-    }
+}
+
+.fa-check-circle {
+    font-size: 1.5rem;
 }
 
 .meal1 {

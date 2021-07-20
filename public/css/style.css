@@ -68,11 +68,11 @@ footer a {
 .animation {
   display: block;
   position: absolute;
-  top: 50%;
-  left: 50%;
   background: #99E2D0;
   width: 3rem;
   height: 3rem;
+  top: 50%;
+  left: 50%;
   animation: spin 3s linear forwards;
   transform: rotate(0deg);
 }
@@ -170,6 +170,11 @@ footer a {
     align-items: center;
   }
 }
+@media screen and (min-width: 768px) {
+  .restaurants__card {
+    width: 40%;
+  }
+}
 .restaurants__new span {
   color: #008766;
   font-weight: 500;
@@ -198,7 +203,6 @@ footer a {
 }
 @media screen and (min-width: 768px) {
   .restaurants__list figure {
-    max-width: 40%;
     margin: 0 0 1.3rem 1.3rem;
   }
 }
@@ -377,8 +381,8 @@ footer a {
   background-color: #99E2D0;
   overflow: hidden;
   margin-top: 0.5rem;
-  padding: 2rem;
-  position: relative;
+  padding: 2rem 2rem 2rem 1.5rem;
+  position: absolute;
   top: -1rem;
   right: -1rem;
   transform: scaleX(0);
@@ -388,6 +392,10 @@ footer a {
   100% {
     transform: scaleX(1);
   }
+}
+.menu__meal--price {
+  display: flex;
+  align-items: center;
 }
 .menu h4,
 .menu p {
@@ -400,11 +408,9 @@ footer a {
   white-space: nowrap;
   overflow: hidden;
 }
-.menu--price {
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  top: -2rem;
+
+.fa-check-circle {
+  font-size: 1.5rem;
 }
 
 .meal1 {
