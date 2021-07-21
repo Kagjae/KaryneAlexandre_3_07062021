@@ -37,6 +37,30 @@ h3 {
   box-shadow: grey 0px 5px 15px;
 }
 
+.menu__meal--contenu {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+.menu__meal--contenu:hover {
+  animation: slidemenu 2s forwards;
+  transform-origin: 0% 50%;
+}
+.menu__meal--price {
+  display: flex;
+  align-items: center;
+}
+
+@keyframes slidemenu {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0.8);
+  }
+}
 .logo {
   display: flex;
   justify-content: center;
@@ -393,20 +417,9 @@ footer a {
     transform: scaleX(1);
   }
 }
-.menu__meal--price {
-  display: flex;
-  align-items: center;
-}
 .menu h4,
 .menu p {
   margin: 0;
-}
-.menu--detail {
-  display: flex;
-  flex-direction: column;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .fa-check-circle {

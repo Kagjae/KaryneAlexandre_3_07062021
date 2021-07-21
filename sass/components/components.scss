@@ -13,3 +13,30 @@
     background: linear-gradient(to bottom right, $color-secondary, $color-primary);
     @include button-shadow;
 }
+
+.menu__meal {
+    &--contenu {
+        display: flex;
+        justify-content: space-between;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        &:hover {
+            animation: slidemenu 2s forwards;
+            transform-origin: 0% 50%;
+        }
+    }
+    &--price {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@keyframes slidemenu {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0.8);
+    }
+}
