@@ -121,7 +121,7 @@
             overflow: hidden;
             margin-top: 0.5rem;
             padding: 2rem 2rem 2rem 1.5rem;
-            position: absolute;
+            position: relative;
             top: -1rem;
             right: -1rem;
             transform: scaleX(0);
@@ -136,6 +136,12 @@
     & h4,
     p {
         margin: 0;
+    }
+    &--contenu {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transition: width 1s;
     }
 }
 

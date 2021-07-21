@@ -21,22 +21,12 @@
         white-space: nowrap;
         overflow: hidden;
         width: 100%;
-        &:hover {
-            animation: slidemenu 2s forwards;
-            transform-origin: 0% 50%;
-        }
     }
     &--price {
         display: flex;
         align-items: center;
     }
-}
-
-@keyframes slidemenu {
-    from {
+    &:hover>.menu__meal--check {
         transform: scaleX(1);
-    }
-    to {
-        transform: scaleX(0.8);
     }
 }
