@@ -99,22 +99,30 @@
         overflow: hidden;
         white-space: nowrap;
         cursor: pointer;
-        animation: slidein 2s forwards;
+        animation: slidein 1s forwards;
         opacity: 0;
         @include button-shadow;
-        &:hover>&--check {
-            animation: app 1s forwards;
-        }
         &:hover {
             .fa-check-circle {
                 transform: scale(1);
-                transform: rotate( 360deg);
                 transition: all 1s;
                 color: white;
+                animation: spincheck 1s linear forwards;
+            }
+            .menu__meal--check {
+                display: flex;
+                animation: app 1s linear forwards;
+            }
+            h4,
+            p {
+                width: 250px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
         }
         &--check {
-            display: flex;
+            display: none;
             align-items: center;
             color: white;
             background-color: $color-tertiary;
@@ -124,24 +132,25 @@
             position: relative;
             top: -1rem;
             right: -1rem;
-            transform: scaleX(0);
-            transform-origin: 100% 50%;
+            width: 0;
+            animation: app 1s linear forwards;
         }
-        @keyframes app {
-            100% {
-                transform: scaleX(1);
-            }
+        &--price {
+            display: flex;
+            align-items: center;
+        }
+        &--contenu {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transition: width 1s;
+            white-space: nowrap;
+            overflow: hidden;
         }
     }
     & h4,
     p {
         margin: 0;
-    }
-    &--contenu {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        transition: width 1s;
     }
 }
 
@@ -176,6 +185,22 @@
     }
 }
 
+@keyframes app {
+    0% {
+        width: 0;
+        display: flex;
+    }
+    100% {
+        width: 2rem;
+        display: flex;
+    }
+}
+
+@keyframes spincheck {
+    -webkit-transform: rotate(360deg);
+    transform: rotate( 360deg);
+}
+
 @media screen and (min-width: 768px) {
     .menu {
         &__appetizer,
@@ -187,7 +212,7 @@
             flex-wrap: nowrap;
         }
         &__meal {
-            width: 40%;
+            width: 50%;
         }
     }
 }
