@@ -1,0 +1,223 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+.menu-header {
+    padding: 1.5rem 0 0.5rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    &__logo {
+        padding: 0 4rem 0 3em;
+        margin: 0;
+    }
+}
+
+.main-menu {
+    background-color: #f6f6f6;
+    &__order {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.main-menu img {
+    max-height: 15rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.menu__appetizer,
+.menu__main-course,
+.menu__dessert {
+    animation: fade-in 5s forwards;
+    display: block;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.menu {
+    padding: 1.5rem;
+    position: relative;
+    bottom: 2.5rem;
+    background-color: #f6f6f6;
+    border-radius: 2.5rem 2.5rem 0 0;
+    & h3 {
+        text-transform: uppercase;
+        font-weight: 300;
+        letter-spacing: -0.04rem;
+        margin: 0 0 0.3rem;
+    }
+    &__underlign {
+        border-top: 3px solid $color-tertiary;
+        width: 3rem;
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        @media screen and (min-width: 768px) {
+            justify-content: center;
+        }
+        & h2 {
+            font-family: 'Shrikhand', cursive;
+        }
+        &--heartfav span {
+            position: absolute;
+            right: 2.5rem;
+        }
+        &--heartfav .heart-full {
+            color: transparent;
+            &:hover {
+                cursor: pointer;
+                background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
+                -webkit-text-fill-color: transparent;
+                transition-duration: 1s;
+            }
+        }
+        .heart-empty:hover {
+            color: transparent;
+            transition-duration: 1s;
+        }
+    }
+    &__meal {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        height: 3rem;
+        width: 95%;
+        background-color: white;
+        margin: 1rem 0;
+        border-radius: 0.8rem;
+        padding: 0.5rem;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        animation: slidein 1s forwards;
+        opacity: 0;
+        @include button-shadow;
+        &:hover {
+            .fa-check-circle {
+                transform: scale(1);
+                transition: all 1s;
+                color: white;
+                animation: spincheck 1s linear forwards;
+            }
+            .menu__meal--check {
+                display: flex;
+                animation: app 1s linear forwards;
+            }
+            h4,
+            p {
+                width: 250px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+        &--check {
+            display: none;
+            align-items: center;
+            color: white;
+            background-color: $color-tertiary;
+            overflow: hidden;
+            margin-top: 0.5rem;
+            padding: 2rem 2rem 2rem 1.5rem;
+            position: relative;
+            top: -1rem;
+            right: -1rem;
+            width: 0;
+            animation: app 1s linear forwards;
+        }
+        &--price {
+            display: flex;
+            align-items: center;
+        }
+        &--contenu {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transition: width 1s;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+    & h4,
+    p {
+        margin: 0;
+    }
+}
+
+.fa-check-circle {
+    font-size: 1.5rem;
+}
+
+.meal1 {
+    animation-delay: 1s;
+}
+
+.meal2 {
+    animation-delay: 1.1s;
+}
+
+.meal3 {
+    animation-delay: 1.2s;
+}
+
+.meal4 {
+    animation-delay: 1.3s;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes app {
+    0% {
+        width: 0;
+        display: flex;
+    }
+    100% {
+        width: 2rem;
+        display: flex;
+    }
+}
+
+@keyframes spincheck {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .menu {
+        &__appetizer,
+        &__main-course,
+        &__dessert {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+        &__meal {
+            width: 50%;
+        }
+    }
+}

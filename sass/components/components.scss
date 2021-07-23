@@ -1,0 +1,15 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+.ohmyfood__button {
+    cursor: pointer;
+    height: 3rem;
+    width: 13.5rem;
+    border-radius: 3rem;
+    margin: 1rem 0 2.5rem;
+    border: none;
+    color: $color-light;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+    @include button-shadow;
+}

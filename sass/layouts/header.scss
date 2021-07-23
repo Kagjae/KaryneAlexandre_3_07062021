@@ -2,8 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    img {
+    margin: 0.5rem;
+    & img {
         height: 2rem;
-        padding: 0.3rem 0;
+        width: 10rem;
+        padding: 1rem 0 0.5rem;
     }
 }
