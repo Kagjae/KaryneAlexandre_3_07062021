@@ -76,7 +76,6 @@
             &:hover {
                 cursor: pointer;
                 background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
-                -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 transition-duration: 1s;
             }
@@ -197,8 +196,12 @@
 }
 
 @keyframes spincheck {
-    -webkit-transform: rotate(360deg);
-    transform: rotate( 360deg);
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
 @media screen and (min-width: 768px) {

@@ -340,7 +340,6 @@ footer a {
 .menu__header--heartfav .heart-full:hover {
   cursor: pointer;
   background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition-duration: 1s;
 }
@@ -454,8 +453,12 @@ footer a {
   }
 }
 @keyframes spincheck {
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 @media screen and (min-width: 768px) {
   .menu__appetizer, .menu__main-course, .menu__dessert {
