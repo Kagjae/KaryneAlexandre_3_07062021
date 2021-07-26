@@ -343,6 +343,7 @@ footer a {
   background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   -webkit-text-fill-color: transparent;
   transition-duration: 1s;
+  -webkit-background-clip: text;
 }
 .menu__header .heart-empty:hover {
   color: transparent;
