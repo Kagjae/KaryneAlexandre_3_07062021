@@ -138,6 +138,7 @@ footer a {
   box-shadow: grey 0px 5px 15px;
 }
 .order__steps--order:hover {
+  box-shadow: #373737 0px 5px 15px;
   background-color: #F5EDFF;
 }
 .order__steps--order:hover .fas {

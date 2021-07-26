@@ -69,6 +69,7 @@
                 cursor: pointer;
                 @include button-shadow;
                 &:hover {
+                    box-shadow: #373737 0px 5px 15px;
                     background-color: #F5EDFF;
                     .fas {
                         color: $color-primary;
