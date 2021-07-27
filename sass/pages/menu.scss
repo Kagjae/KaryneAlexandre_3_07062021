@@ -107,11 +107,11 @@
                 transform: scale(1);
                 transition: all 1s;
                 color: white;
-                animation: spincheck 1s linear forwards;
+                animation: spincheck 500ms linear forwards;
             }
             .menu__meal--check {
                 display: flex;
-                animation: app 1s linear forwards;
+                animation: app 500ms linear forwards;
             }
             h4,
             p {
